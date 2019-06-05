@@ -1,89 +1,294 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 * {
   box-sizing: border-box;
 }
 
-input[type="text"],
-input[type="number"] {
+body {
+  margin: 0;
+}
+
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+ul {
+  padding: 0px;
+}
+
+h2,
+h3,
+a {
+  color: #093a58;
+}
+
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 0.4em;
+}
+
+figure {
+  margin: 0;
+  line-height: 0;
+  position: relative;
+}
+figcaption {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #fff;
+  padding: 1em;
+  background: rgba(19, 43, 102, 0.85);
+
+  position: absolute;
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  bottom: 0;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
-  background-color: #ddd;
-  outline: none;
+.location-img {
+  width: 35px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.25em;
+  margin: 0;
+}
+.name a,
+.main-nav a {
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
 }
 
-form#form-area {
-  border: 1px solid #ccc;
+.main-nav a {
+  font-size: 0.96em;
+  color: rgba(19, 43, 102, 0.85);
+  text-transform: uppercase;
 }
 
-textarea#styled {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
+.main-nav a:hover {
+  color: #093a58;
 }
 
-h1 {
-  margin-bottom: 5px;
+/* ---- Layout Containers ---- */
+
+.main-header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.banner,
+.main-footer {
+  text-align: center;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+.banner {
+  color: #093a58;
+  background: #ddd;
+  margin-bottom: 40px;
 }
 
-button:hover {
-  opacity: 1;
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
-.container {
-  padding: 16px;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
+.main-footer {
+  background: rgba(19, 43, 102, 0.85);
+  color: #fff;
+  padding: 2em 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+/* ---- Page Elements ---- */
+
+.logo {
+  width: 190px;
 }
 
-@media screen and (max-width: 300px) {
-  .signupbtn {
+.headline {
+  margin-bottom: 0;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  body {
+    padding-top: 68px;
+  }
+  .name {
+    padding: 12px 0;
+  }
+  .main-header {
+    position: fixed;
     width: 100%;
+    box-shadow: 0 2px 5px #949494;
+    top: 0px;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .name,
+  .col {
+    float: left;
+  }
+
+  .primary,
+  .secondary {
+    width: 50%;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
   }
 }
 
-form {
-  width: 40%;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+@media (min-width: 1025px) {
+  .container {
+    width: 80%;
+    max-width: 1150px;
+  }
+
+  .primary {
+    width: 40%;
+  }
+
+  .secondary,
+  .tertiary {
+    width: 30%;
+  }
 }
 
-input[type="checkbox"] {
-  width: 20px;
+/* =================== */
+
+body {
+  padding: 0;
+  padding-top: 50px;
+  background: #ddd;
+  color: #093a58;
+  font-family: "Raleway", sans-serif;
+  font-size: 125%;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container * {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #093a58;
+}
+
+h5 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 200;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  color: #093a58;
+}
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+.flex-outer > li:not(:last-child) {
+  padding-bottom: 20px;
+}
+.flex-outer li input:not([type="checkbox"]),
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+  font-size: 0.8em;
+}
+.flex-outer li label {
+  padding: 8px;
+}
+.flex-outer li select {
+  border: none;
+}
+
+.flex-outer li p {
+  margin: 0;
+  padding: 8px;
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #093a58;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.flex-outer > li > label {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+.flex-outer > li > label + * {
+  flex: 1 0 220px;
+}
+
+.flex-inner {
+  padding: 0 8px;
+  flex: 1 0 220px;
+  justify-content: space-between;
+}
+.flex-inner li {
+  width: 100px;
+  font-size: 0.8em;
 }

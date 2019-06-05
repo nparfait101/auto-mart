@@ -11,70 +11,114 @@
   </head>
 
   <body>
-    <form class="form-area">
-      <div class="container">
-        <h1>Post your ad</h1>
-        <p>Please fill in the form below</p>
-        <hr />
+      <header class="main-header">
+          <div class="container clearfix">
+            <h1 class="name"><a href="../../index.html">Auto Mart</a></h1>
+            <ul class="main-nav">
+              <li><a href="./allcar.html">Explore</a></li>
+              <li><a href="#">Post Ad</a></li>
+              <li><a href="./signin.html">Login</a></li>
+              <li><a href="./register.html">Register</a></li>
+            </ul>
+          </div>
+        </header>
 
-        <label for="names"><b>Title</b></label>
-        <input
-          type="text"
-          placeholder="Enter the Title"
-          name="title"
-          required
-        />
+        <div class="banner">
+            
+          
 
-        <label for="type"><b>Body Type</b></label>
-        <input type="text" placeholder="Enter Body Type" name="type" required />
+    <div class="container">
+        <h5>Post your ad</h5>
+        <form action="">
+          <ul class="flex-outer">
+            <li>
+              <label for="first-name">Title</label
+              ><input
+                type="text"
+                id="first-name"
+                placeholder="Enter the title here"
+              />
+            </li>
+            <li>
+              <label for="last-name">Body Type</label
+              ><input
+                type="text"
+                id="body-type"
+                placeholder="Enter body type here"
+              />
+            </li>
+            <li>
+              <label for="manufacturer">Manufacturer</label
+              ><input
+                type="text"
+                id="manufacturer"
+                placeholder="Enter the manufacturer here"
+              />
+  
+            </li>
+            <li>
+              <label for="model">Model</label
+                ><input
+                  type="text"
+                  id="model"
+                  placeholder="Enter the model here"
+                />
+            </li>
+            <li>
+              <label for="price">Price</label
+                ><input
+                  type="number"
+                  id="price"
+                  placeholder="Confirm the price here"
+                />
+            </li>
 
-        <label for="names"><b>Manufacturer</b></label>
-        <input
-          type="text"
-          placeholder="Enter the Manufacturer"
-          name="manufacturer"
-          required
-        />
-
-        <label for="names"><b>Model</b></label>
-        <input
-          type="text"
-          placeholder="Enter the Model"
-          name="model"
-          required
-        />
-
-        <label for="price"><b>Price</b></label>
-        <input
-          type="text"
-          placeholder="Enter the Price"
-          name="price"
-          required
-        />
-
-        <h5><input type="checkbox" name="new" />New</h5>
-
-        <h5><input type="checkbox" name="used" />Used</h5>
-        <br />
-
-        <h5><input type="checkbox" name="Available" />Available</h5>
-
-        <h5><input type="checkbox" name="sold" />Sold</h5>
-        <br />
-
-        <label for="description"><b>Description</b></label
-        ><br />
-
-        <textarea
-          name="styled-textarea"
-          id="styled"
-          placeholder="Enter car description..."
-        ></textarea>
-
-        <div class="clearfix">
-          <button type="submit" class="signupbtn">Sign Up</button>
-        </div>
+            <li>
+                <label for="state">State</label>
+                <select>
+                    <option value="state">New</option>
+                    <option value="state">Used</option>
+                  </select>
+            </li>
+            <li>
+                <label for="status">Status</label>
+                <select>
+                    <option value="status">Available</option>
+                    <option value="status">Sold</option>
+                  </select>
+            </li>
+  
+            <li>
+              <label for="image">Image</label
+              ><input type="file" name="pic" id="pic" /><br />
+            </li>
+            <li>
+              <label for="message">Description</label
+              ><textarea
+                rows="6"
+                id="description"
+                placeholder="Write your car description"
+              ></textarea>
+            </li>
+            <li>
+              
+              <ul class="flex-inner">
+                
+                </li>
+              </ul>
+            </li>
+            <li><button type="submit">SUBMIT POST</button></li>
+  
+          </ul>
+          
+        </form>
+      
       </div>
-    </form>
+      
+        </div>
+        </div>
+        <footer class="main-footer">
+            <span>&copy;Copyright 2019 All right reserved to Auto Mart.</span>
+          </footer>
   </body>
 </html>
