@@ -1,6 +1,5 @@
 import express from "express";
-import router from "./Routes/car";
-import Joi from "joi";
+import router from "./src/Routes/car";
 
 const app = express();
 

@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": " nyc mocha --require @babel/register \"./tests/*.js\" --timeout 1500 --exit",
-    "start": "babel-watch server.js "
+    "test": " nyc mocha --require @babel/register \"./src/tests/*.js\" --timeout 1500 --exit",
+    "start": "babel-watch ./server.js "
   },
   "author": "Parfait",
   "license": "ISC",
