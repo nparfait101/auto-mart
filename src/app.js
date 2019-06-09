@@ -1,11 +1,6 @@
 import express from "express";
-<<<<<<< HEAD:app.js
-import router from "./src/Routes/car";
-=======
 import Joi from "joi";
-// import car from "./Routes/car";
 import router from "./Routes/orderRoutes";
->>>>>>> ft-purchase-order-166494139:src/app.js
 
 const app = express();
 
