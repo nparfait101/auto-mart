@@ -4,9 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+<<<<<<< HEAD:package.json
     "heroku": "babel-watch ./server.js",
     "test": " nyc mocha --require @babel/register \"./src/tests/*.js\" --timeout 1500 --exit",
     "start": "babel-watch ./server.js "
+=======
+    "test": "nyc mocha \"./tests/test.js\" --require @babel/register --exit",
+    "start": "babel-watch server.js "
+>>>>>>> ft-purchase-order-166494139:src/package.json
   },
   "author": "Parfait",
   "license": "ISC",
