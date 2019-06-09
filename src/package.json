@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": " mocha --require babel-polyfill --require babel-register ./tests/cars.test.js --timeout 1500 --exit",
+    "test": "nyc mocha \"./tests/test.js\" --require @babel/register --exit",
     "start": "babel-watch server.js "
   },
   "author": "Parfait",

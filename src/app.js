@@ -1,6 +1,7 @@
 import express from "express";
-import router from "./Routes/car";
 import Joi from "joi";
+// import car from "./Routes/car";
+import router from "./Routes/orderRoutes";
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.use(
 );
 app.use("/api/v1/users", router);
 app.use("/api/v1/cars", router);
+app.use("/api/v1/orders", router);
 
 export default app;
