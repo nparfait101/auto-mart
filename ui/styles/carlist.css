@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0px;
+}
+
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+ul {
+  padding: 0px;
+}
+
+h2,
+h3,
+a {
+  color: #093a58;
+}
+
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 0.4em;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  line-height: 0;
+  position: relative;
+}
+figcaption {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #fff;
+  padding: 1em;
+  background: rgba(19, 43, 102, 0.85);
+
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.location-img {
+  width: 35px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+/* ================================= 
+    Base Layout Styles
+  ==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.25em;
+  margin: 0;
+}
+.name a,
+.main-nav a {
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.main-nav a {
+  font-size: 0.96em;
+  color: rgba(19, 43, 102, 0.85);
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.banner,
+.main-footer {
+  text-align: center;
+}
+
+.banner {
+  color: #fff;
+  background: #f1f1f1;
+  padding: 3.2em 0;
+  margin-bottom: 60px;
+}
+
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.main-footer {
+  background: rgba(19, 43, 102, 0.85);
+  color: #fff;
+  padding: 2em 0;
+  margin-bottom: 30px;
+}
+
+.prod-card {
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+}
+
+.img {
+  width: 320px;
+  float: left;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+}
+
+.prod-info {
+  float: left;
+  padding: 0 20px 20px 20px;
+}
+
+.prod-info a {
+  display: block;
+  float: left;
+  padding: 2px 4px;
+  margin-right: 60px;
+  border: 2px solid;
+  color: #e74c3c;
+  font-size: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.price {
+  color: blue;
+}
+
+@media screen and (max-width: 1430px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 50px;
+  }
+
+  header li {
+    display: inline;
+    padding: 0 7px 0 7px;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 150px;
+  }
+
+  header li {
+    display: inline;
+    padding: 0 7px 0 7px;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 200px;
+  }
+
+  header li {
+    display: inline;
+    padding: 0 5px 0 5px;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 9px;
+  }
+}
+
+/* ================================= 
+    Media Queries
+  ==================================== */
+
+@media (min-width: 769px) {
+  body {
+    padding-top: 68px;
+  }
+  .name {
+    padding: 12px 0;
+  }
+  .main-header {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px #949494;
+    top: 0px;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .name,
+  .col {
+    float: left;
+  }
+
+  .primary,
+  .secondary {
+    width: 50%;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    width: 80%;
+    max-width: 1150px;
+  }
+
+  .primary {
+    width: 40%;
+  }
+
+  .secondary,
+  .tertiary {
+    width: 30%;
+  }
+}
