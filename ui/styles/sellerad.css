@@ -107,7 +107,7 @@ figcaption {
   background: rgba(19, 43, 102, 0.85);
   color: #fff;
   padding: 2em 0;
-
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -291,75 +291,4 @@ h5 {
 .flex-inner li {
   width: 100px;
   font-size: 0.8em;
-}
-
-.prod-card {
-  width: 60%;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  margin-bottom: 90px;
-}
-
-.img {
-  width: 320px;
-  float: left;
-  overflow: hidden;
-}
-
-.img img {
-  width: 100%;
-}
-
-.prod-info {
-  float: left;
-  padding: 0 20px 20px 20px;
-}
-
-.prod-info a {
-  display: block;
-  float: left;
-  padding: 2px 4px;
-  margin-bottom: 10px;
-  margin-right: 60px;
-  border: 2px solid;
-  color: #e74c3c;
-  font-size: 20px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.price {
-  color: blue;
-}
-
-@media screen and (max-width: 1430px) {
-  .prod-card {
-    width: 60%;
-    margin-top: 150px;
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  .prod-card {
-    width: 60%;
-    margin-top: 250px;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .prod-card {
-    width: 60%;
-    margin-top: 350px;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .prod-card {
-    width: 60%;
-    margin-top: 450px;
-  }
 }
