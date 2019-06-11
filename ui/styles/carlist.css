@@ -3,7 +3,11 @@
 }
 
 body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
   margin: 0;
+  min-height: 100%;
 }
 
 p {
@@ -28,6 +32,21 @@ h4 {
 
 h4 {
   margin-bottom: 0.4em;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+.main-footer {
+  background: rgba(19, 43, 102, 0.85);
+  color: #fff;
+  padding: 2em 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 .location-img {
@@ -78,7 +97,7 @@ h4 {
 .banner {
   color: #093a58;
   background: #ddd;
-  margin-bottom: 40px;
+  margin-bottom: 180px;
 }
 
 .col {
@@ -90,8 +109,7 @@ h4 {
   background: rgba(19, 43, 102, 0.85);
   color: #fff;
   padding: 2em 0;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin-top: 700px;
 }
 
 /* ---- Page Elements ---- */
@@ -161,6 +179,60 @@ h4 {
   }
 }
 
+.prod-card {
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #cfbfbf;
+  margin-top: 110px;
+}
+.prod-card2 {
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #cfbfbf;
+  margin-top: 240px;
+}
+
+.img {
+  width: 320px;
+  float: left;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+}
+
+.prod-info {
+  float: left;
+  padding: 0 20px 20px 20px;
+  /* margin: 15px 40px 15px 10px; */
+}
+
+.prod-info a {
+  display: block;
+  float: left;
+  padding: 2px 4px;
+  margin-bottom: 10px;
+  margin-right: 60px;
+  border: 2px solid;
+  color: #5b5c33;
+  font-size: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.price {
+  color: blue;
+}
+
 @media (min-width: 1025px) {
   .container {
     width: 80%;
@@ -177,101 +249,58 @@ h4 {
   }
 }
 
-/* =================== */
-
-body {
-  padding: 0;
-  padding-top: 50px;
-  background: #ddd;
-  color: #093a58;
-  font-family: "Raleway", sans-serif;
-  font-size: 125%;
+@media screen and (max-width: 1430px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 170px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 270px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
 }
 
-.container {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.container * {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: #093a58;
-}
-
-h5 {
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 200;
-  font-size: 2em;
-  text-transform: uppercase;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  color: #093a58;
-}
-.flex-outer li,
-.flex-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
+@media screen and (max-width: 1150px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 200px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 390px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
 }
 
-.flex-outer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0;
+@media screen and (max-width: 850px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 230px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 450px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
 }
-.flex-outer > li:not(:last-child) {
-  padding-bottom: 20px;
-}
-.flex-outer li input:not([type="checkbox"]),
-.flex-outer li textarea {
-  padding: 15px;
-  border: none;
-  font-size: 0.8em;
-}
-.flex-outer li label {
-  padding: 8px;
-}
-.flex-outer li select {
-  border: none;
-}
-
-.flex-outer li p {
-  margin: 0;
-  padding: 8px;
-  flex: 1 0 120px;
-  max-width: 220px;
-}
-.flex-outer li button {
-  margin-left: auto;
-  padding: 8px 16px;
-  border: none;
-  background: #093a58;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.flex-outer > li > label {
-  flex: 1 0 120px;
-  max-width: 220px;
-}
-.flex-outer > li > label + * {
-  flex: 1 0 220px;
-}
-
-.flex-inner {
-  padding: 0 8px;
-  flex: 1 0 220px;
-  justify-content: space-between;
-}
-.flex-inner li {
-  width: 100px;
-  font-size: 0.8em;
+@media screen and (max-width: 650px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 380px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 675px;
+  }
+  .main-footer {
+    bottom: 0;
+    margin-top: 30px;
+  }
 }
