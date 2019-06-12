@@ -49,10 +49,10 @@ img {
   margin-bottom: 0;
 }
 select {
-  margin: auto;
-  width: 10%;
-  color: #3a3a3a;
   margin-top: 100px;
+  background: none;
+  padding: 5px;
+  border: 1px solid rgba(19, 43, 102, 0.85);
 }
 
 .location-img {
@@ -102,7 +102,7 @@ select {
 
 .banner {
   color: #093a58;
-  background: #ddd;
+  background: none;
   margin-bottom: 180px;
 }
 
