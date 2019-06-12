@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" type="text/css" href="../styles/carlist.css" />
+
+    <title>Explore</title>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="container clearfix">
+        <h1 class="name"><a href="../../index.html">Auto Mart</a></h1>
+        <ul class="main-nav">
+          <li><a href="./sellerad.html">Post Ad</a></li>
+          <li><a href="./carlist.html">Explore</a></li>
+          <li><a href="./signin.html">Login</a></li>
+          <li><a href="./register.html">Register</a></li>
+          <li><a href="./admindash.html">Admin</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="banner">
+      <form class="form-inline">
+        <label><b>Type:</b><input type="radio" name="state" />New</label>
+        <label><input type="radio" name="state" />Used</label>
+
+        <label for="price"><b>Price Range:</b> </label>
+        <input type="number" id="email" placeholder="starting" name="price" />
+        <label for="price">to</label>
+        <input type="number" id="email" placeholder="to" name="price" />
+        <label for="pwd"><b>Make:</b></label>
+        <input type="make" id="make" placeholder="Enter make" name="make" />
+      </form>
+      <div class="prod-card">
+        <div class="img">
+          <img src="../assets/bmw.jpg" />
+        </div>
+        <div class="prod-info">
+          <h2>BMW E320 for sale</h2>
+          <h3>Price: <span class="price">$24,000</span></h3>
+          <a href="./carprofile.html">View more details</a> <br />
+        </div>
+      </div>
+      <div class="prod-card2">
+        <div class="img">
+          <img src="../assets/bmw.jpg" />
+        </div>
+        <div class="prod-info">
+          <h2>Audi A6 for sale</h2>
+          <h3>Price: <span class="price">$18,000</span></h3>
+          <a href="./carprofile.html">View more details</a> <br />
+        </div>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <span>&copy;Copyright 2019 All right reserved to Auto Mart.</span>
+    </footer>
+  </body>
+</html>
