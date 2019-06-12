@@ -24,13 +24,17 @@
       </div>
     </header>
     <div class="banner">
-      <label for="status">Filter By:</label>
-      <select>
-        <option value="price">Price</option>
-        <option value="make">Make</option>
-        <option value="state">Used</option>
-        <option value="state">New</option>
-      </select>
+      <form class="form-inline">
+        <label><b>Type:</b><input type="radio" name="state" />New</label>
+        <label><input type="radio" name="state" />Used</label>
+
+        <label for="price"><b>Price Range:</b> </label>
+        <input type="number" id="email" placeholder="starting" name="price" />
+        <label for="price">to</label>
+        <input type="number" id="email" placeholder="to" name="price" />
+        <label for="pwd"><b>Make:</b></label>
+        <input type="make" id="make" placeholder="Enter make" name="make" />
+      </form>
       <div class="prod-card">
         <div class="img">
           <img src="../assets/bmw.jpg" />
