@@ -33,6 +33,12 @@ h4 {
 h4 {
   margin-bottom: 0.4em;
 }
+select {
+  margin-top: 100px;
+  background: none;
+  padding: 5px;
+  border: 1px solid rgba(19, 43, 102, 0.85);
+}
 
 a {
   text-decoration: none;
@@ -96,7 +102,7 @@ img {
 
 .banner {
   color: #093a58;
-  background: #ddd;
+  background: none;
   margin-bottom: 180px;
 }
 
