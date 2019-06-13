@@ -3,8 +3,6 @@ import chaiHttp from "chai-http";
 import app from "../../app";
 
 const should = chai.should();
-import Order from "../models/order";
-import Car from "../models/car";
 
 chai.use(chaiHttp);
 
@@ -26,9 +24,6 @@ describe("POST /orders", () => {
         done();
       });
   });
-});
-
-describe("GET /orders/<order-id>", () => {
   it("It should get order by id ", done => {
     chai
       .request(app)
@@ -49,9 +44,6 @@ describe("GET /orders/<order-id>", () => {
         done();
       });
   });
-});
-
-describe("/GET Orders", () => {
   it("It should return all orders", done => {
     chai
       .request(app)
@@ -62,24 +54,7 @@ describe("/GET Orders", () => {
         done();
       });
   });
-});
 
-describe("PATCH /orders/<order-id>/price_offered", () => {
-  it("It should update only the price offered and return object with updated data", done => {
-    chai
-      .request(app)
-      .patch("/api/v1/orders/1/price_offered")
-      .send(newPrice_offered)
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.an("object");
-        res.body.should.have.property("data").be.a("array");
-        done();
-      });
-  });
-});
-
-describe("DELETE /orders/<order-id>", () => {
   it("It should delete data and return deleted data", done => {
     chai
       .request(app)

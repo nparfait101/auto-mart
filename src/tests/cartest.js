@@ -3,15 +3,14 @@ import chaiHttp from "chai-http";
 import app from "../../app";
 
 const should = chai.should();
-import Order from "../models/order";
-import Car from "../models/car";
 
 chai.use(chaiHttp);
 const newCar = {
   email: "abcdef@gmail.com",
+  createdDate: 1559673866880,
   manufacturer: "BMW",
   model: "E320",
-  price: "9000000",
+  price: "19000000",
   state: "new",
   status: "available"
 };
@@ -28,38 +27,12 @@ describe("POST /cars", () => {
         done();
       });
   });
-});
-
-describe("GET /cars", () => {
   it("It should return all cars", done => {
     chai
       .request(app)
       .get("/api/v1/cars")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.an("object");
-        done();
-      });
-  });
-});
-
-describe("GET /cars/<car-id>", () => {
-  it("It should fetch car by id ", done => {
-    chai
-      .request(app)
-      .get("/api/v1/cars/1")
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.an("object");
-        done();
-      });
-  });
-  it("Once provided wrong ID, It should say that it is invalid", done => {
-    chai
-      .request(app)
-      .get("/api/v1/cars/dghds4")
-      .end((err, res) => {
-        res.should.have.status(404);
         res.body.should.be.an("object");
         done();
       });

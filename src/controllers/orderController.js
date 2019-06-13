@@ -33,7 +33,7 @@ const createOrder = (req, res) => {
 // Fetch a specific purchase order.
 
 const getOnlyOne = (req, res) => {
-  const order = orders.find(p => p.id === parseInt(req.params.id, 10));
+  const order = orders.find(p => p.id === req.params.id);
   if (!order)
     return res
       .status(404)
