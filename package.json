@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "heroku": "babel-watch ./server.js",
-    "test": " nyc mocha --require @babel/register \"./src/tests/*.js\" --timeout 1500 --exit",
+    "test": "nyc mocha --require @babel/register \"./src/tests/*.js\" --timeout 1500 --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "babel-watch ./server.js "
   },
   "author": "Parfait",
