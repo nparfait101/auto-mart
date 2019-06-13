@@ -9,8 +9,6 @@ const verifyToken = (req, res, next) => {
   }
 
   jwt.verify(token, "ntagungira", (err, decoded) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", decoded);
-
     if (err) {
       return res.status(401).json({
         status: 401,

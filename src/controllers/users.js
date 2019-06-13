@@ -33,7 +33,7 @@ class User {
     };
     const registeredUser = users.find(item => item.email === user.email);
 
-    if (!registeredUser.email) {
+    if (!registeredUser) {
       return res.status(400).send({
         status: 400,
         error: "Invalid email"

@@ -51,9 +51,7 @@ const getAllOrder = (req, res) =>
 
 // Edit the name of a specific political party
 const editOrderPrice = (req, res) => {
-  const order = orders.find(
-    eachOrder => eachOrder.id === parseInt(req.params.id, 10)
-  );
+  const order = orders.find(eachOrder => eachOrder.id === req.params.id);
   if (!order)
     return res.send({
       status: 404,
