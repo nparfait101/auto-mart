@@ -8,22 +8,21 @@ const verifyToken = (req, res, next) => {
     });
   }
 
-  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+  jwt.verify(token, "ntagungira", (err, decoded) => {
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", decoded);
+
     if (err) {
       return res.status(401).json({
         status: 401,
         error: "authenticate failed"
       });
     }
-    if (decoded.kindUser !== "admin") {
+    if (decoded.type !== true) {
       return res.status(401).json({
         status: 401,
         error: "Only admin authorised"
       });
     }
-
-    req.userId = decoded.userId || null;
-    req.isAdmin = decoded.kinderUser || null;
     next();
     return true;
   });

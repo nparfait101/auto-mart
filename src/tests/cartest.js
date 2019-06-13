@@ -14,12 +14,33 @@ const newCar = {
   state: "new",
   status: "available"
 };
-
-describe("POST /cars", () => {
+const newUser = {
+  email: "someone@SpeechGrammarList.com",
+  firstname: "heyoo",
+  lastname: "bross",
+  password: "ghhjkjkk",
+  address: "kigali",
+  isAdmin: true
+};
+let token;
+describe("cars", () => {
+  it("user should be logged in", done => {
+    chai
+      .request(app)
+      .post("/api/v1/users/login")
+      .send({ email: "someone@SpeechGrammarList.com", password: "ghhjkjkk" })
+      .end((err, res) => {
+        token = res.body.token;
+        res.should.have.status(200);
+        res.body.should.be.an("object");
+        done();
+      });
+  });
   it("It should create new car and return an object with a status code and a new car created", done => {
     chai
       .request(app)
       .post("/api/v1/cars")
+      .set("Authorization", token)
       .send(newCar)
       .end((err, res) => {
         res.should.have.status(201);
