@@ -15,7 +15,7 @@ class Car {
    */
   create(data) {
     const newCar = {
-      id: uuid.v4(),
+      id: Math.ceil(Math.random() * 50),
       email: data.email || "",
       createdDate: moment.now(),
       manufacturer: data.manufacturer || "",
