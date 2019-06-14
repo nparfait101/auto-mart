@@ -1,10 +1,10 @@
-import users from "../models/users";
+import singleUser from "../models/users";
 import Helper from "../helpers/validation";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 class User {
   // create a user
-  static createUser(req, res) {
+  createUser(req, res) {
     const user = Helper.isUserValid(req.body);
     if (user.error != null) {
       const errors = [];
@@ -15,23 +15,23 @@ class User {
     }
 
     const newUser = {
-      id: users.length + 1,
+      id: singleUser.length + 1,
       email: req.body.email,
-      firstname: req.body.first_name,
-      lastname: req.body.last_name,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       password: bcrypt.hashSync(req.body.password, 8),
       address: req.body.address,
-      isAdmin: req.body.is_admin
+      is_admin: req.body.is_admin
     };
-    users.push(newUser);
+    singleUser.push(newUser);
     return res.status(201).send({ status: 201, data: newUser });
   }
-  static Login(req, res) {
+  Login(req, res) {
     const user = {
       email: req.body.email,
       password: req.body.password
     };
-    const registeredUser = users.find(item => item.email === user.email);
+    const registeredUser = singleUser.find(item => item.email === user.email);
 
     if (!registeredUser) {
       return res.status(400).send({
@@ -59,4 +59,5 @@ class User {
     });
   }
 }
-export default User;
+const my_user = new User();
+export default my_user;

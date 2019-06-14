@@ -17,7 +17,7 @@ class Car {
     const newCar = {
       id: Math.ceil(Math.random() * 50),
       email: data.email || "",
-      createdDate: moment.now(),
+      createdDate: moment(Date.now()),
       manufacturer: data.manufacturer || "",
       model: data.model || "",
       price: data.price || "",
@@ -55,7 +55,7 @@ class Car {
     this.cars[index].price = data["price"] || car.price;
     this.cars[index].state = data["state"] || car.state;
     this.cars[index].status = data["status"] || car.status;
-    this.cars[index].modifiedDate = moment.now();
+    this.cars[index].modifiedDate = moment(Date.now());
     return this.cars[index];
   }
   /**

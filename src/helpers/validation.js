@@ -5,11 +5,11 @@ class Helper {
 
   static isUserValid(user) {
     const schema = {
-      firstname: Joi.string()
+      first_name: Joi.string()
         .min(2)
         .required()
         .trim(),
-      lastname: Joi.string()
+      last_name: Joi.string()
         .min(2)
         .required()
         .trim(),
@@ -26,7 +26,7 @@ class Helper {
         .min(2)
         .required()
         .trim(),
-      isAdmin: Joi.boolean().default(false)
+      is_admin: Joi.boolean().default(false)
     };
     return Joi.validate(user, schema);
   }

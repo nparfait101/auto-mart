@@ -7,7 +7,6 @@ const should = chai.should();
 chai.use(chaiHttp);
 const newCar = {
   email: "abcdef@gmail.com",
-  createdDate: 1559673866880,
   manufacturer: "BMW",
   model: "E320",
   price: "19000000",

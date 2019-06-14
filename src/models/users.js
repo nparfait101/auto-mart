@@ -1,4 +1,4 @@
-const User = [
+const singleUser = [
   {
     id: "1",
     email: "someone@SpeechGrammarList.com",
@@ -10,4 +10,4 @@ const User = [
   }
 ];
 
-export default User;
+export default singleUser;
