@@ -1,4 +1,5 @@
 import express from "express";
+import auth from "../helpers/auth";
 import {
   createOrder,
   getAllOrder,
@@ -8,10 +9,10 @@ import {
 } from "../controllers/orderController";
 
 const router = express.Router();
-router.post("/", createOrder);
+router.post("/", auth, createOrder);
 router.get("/", getAllOrder);
 router.get("/:id", getOnlyOne);
-router.patch("/:id/price", editOrderPrice);
+router.put("/:id", auth, editOrderPrice);
 router.delete("/:id", deleteOrder);
 
 export default router;

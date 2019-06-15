@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0;
+  min-height: 100%;
+}
+
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+ul {
+  padding: 0px;
+}
+
+h2,
+h3,
+a {
+  color: #093a58;
+}
+
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 0.4em;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  min-height: 100px;
+  background-color: rgba(33, 33, 33, 0.3);
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 2px 7px 2px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 2px 7px 2px 0;
+  padding: 7px;
+  background-color: rgb(182, 179, 179);
+  border: 1px solid #093a58;
+  border-radius: 3px;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 3px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+.main-footer {
+  background: rgba(19, 43, 102, 0.85);
+  color: #fff;
+  padding: 2em 0;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.location-img {
+  width: 35px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.25em;
+  margin: 0;
+}
+.name a,
+.main-nav a {
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.main-nav a {
+  font-size: 0.96em;
+  color: rgba(19, 43, 102, 0.85);
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.banner,
+.main-footer {
+  text-align: center;
+}
+
+.banner {
+  color: #093a58;
+  background: none;
+  margin-bottom: 180px;
+}
+
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.main-footer {
+  background: rgba(19, 43, 102, 0.85);
+  color: #fff;
+  padding: 2em 0;
+  margin-top: 700px;
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+  width: 190px;
+}
+
+.headline {
+  margin-bottom: 0;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  body {
+    padding-top: 68px;
+  }
+  .name {
+    padding: 12px 0;
+  }
+  .main-header {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px #949494;
+    top: 0px;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .name,
+  .col {
+    float: left;
+  }
+
+  .primary,
+  .secondary {
+    width: 50%;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+.prod-card {
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #cfbfbf;
+  margin-top: 110px;
+}
+.prod-card2 {
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #cfbfbf;
+  margin-top: 240px;
+}
+
+.img {
+  width: 320px;
+  float: left;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+}
+
+.prod-info {
+  float: left;
+  padding: 0 20px 20px 20px;
+  /* margin: 15px 40px 15px 10px; */
+}
+
+.prod-info a {
+  display: block;
+  float: left;
+  padding: 2px 4px;
+  margin-bottom: 10px;
+  margin-right: 60px;
+  border: 2px solid;
+  color: #5b5c33;
+  font-size: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.price {
+  color: blue;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    width: 80%;
+    max-width: 1150px;
+  }
+
+  .primary {
+    width: 40%;
+  }
+
+  .secondary,
+  .tertiary {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 170px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 270px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 200px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 390px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 230px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 450px;
+  }
+  .main-footer {
+    margin-bottom: -50px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .prod-card {
+    width: 60%;
+    margin-top: 380px;
+  }
+  .prod-card2 {
+    width: 60%;
+    margin-top: 675px;
+  }
+  .main-footer {
+    bottom: 0;
+    margin-top: 30px;
+  }
+}

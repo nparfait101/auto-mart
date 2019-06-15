@@ -1,11 +1,9 @@
 import express from "express";
-<<<<<<< HEAD:app.js
-import router from "./src/Routes/car";
-=======
-import Joi from "joi";
-// import car from "./Routes/car";
-import router from "./Routes/orderRoutes";
->>>>>>> ft-purchase-order-166494139:src/app.js
+import bodyParser from "body-parser";
+
+import car from "./src/Routes/car";
+import orderRoutes from "./src/Routes/orderRoutes";
+import users from "./src/Routes/users";
 
 const app = express();
 
@@ -15,8 +13,9 @@ app.use(
     extended: false
   })
 );
-app.use("/api/v1/users", router);
-app.use("/api/v1/cars", router);
-app.use("/api/v1/orders", router);
+
+app.use("/api/v1/cars", car);
+app.use("/api/v1/orders", orderRoutes);
+app.use("/api/v1/users", users);
 
 export default app;
