@@ -1,10 +1,10 @@
 const singleUser = [
   {
     id: "1",
-    email: "someone@SpeechGrammarList.com",
+    email: "someone@gmail.com",
     first_name: "heyoo",
     last_name: "bross",
-    password: "ghhjkjkk",
+    password: "password",
     address: "kigali",
     is_admin: true
   }
