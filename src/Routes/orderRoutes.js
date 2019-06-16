@@ -13,6 +13,6 @@ router.post("/", auth, createOrder);
 router.get("/", getAllOrder);
 router.get("/:id", getOnlyOne);
 router.put("/:id", auth, editOrderPrice);
-router.delete("/:id", deleteOrder);
+router.delete("/:id", auth, deleteOrder);
 
 export default router;

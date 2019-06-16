@@ -1,11 +1,18 @@
 import express from "express";
-import car from "../controllers/car";
 import auth from "../helpers/auth";
+import {
+  createCar,
+  getAllCar,
+  getOnlyOne,
+  editCarPrice,
+  deleteCar
+} from "../controllers/car";
 
 const router = express.Router();
-router.post("/", auth, car.create);
-router.get("/", car.getCars);
-router.put("/:id", car.editCar);
-router.get("/:id", car.getOne);
+router.post("/", auth, createCar);
+router.get("/", getAllCar);
+router.get("/:id", getOnlyOne);
+router.put("/:id", auth, editCarPrice);
+router.delete("/:id", auth, deleteCar);
 
 export default router;

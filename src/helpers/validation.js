@@ -26,7 +26,7 @@ class Helper {
         .min(2)
         .required()
         .trim(),
-      is_admin: Joi.boolean().default(false)
+      is_admin: Joi.boolean().default(true)
     };
     return Joi.validate(user, schema);
   }
