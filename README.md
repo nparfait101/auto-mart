@@ -48,7 +48,7 @@ POST `/api/v1/auth/login` Loging a new User
 
 # Heroku
 
-Visit the link. You can test the above API endpoints using this URL https://auto-mart-v1.herokuapp.com/
+Visit the link, You can test the above API endpoints using this URL https://auto-mart-v1.herokuapp.com/
 
 # Author
 
