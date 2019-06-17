@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/nparfait101/auto-mart.svg?branch=develop)](https://travis-ci.org/nparfait101/auto-mart)
-[![Coverage Status](https://coveralls.io/repos/github/nparfait101/auto-mart/badge.svg?branch=ft-user-login-166294422)](https://coveralls.io/github/nparfait101/auto-mart?branch=ft-user-login-166294422)
+
+[![Coverage Status](https://coveralls.io/repos/github/nparfait101/auto-mart/badge.svg)](https://coveralls.io/github/nparfait101/auto-mart)
 
 # auto-mart
 
@@ -36,14 +37,23 @@ npm test for running the tests.
 # API ENDPOINTS
 
 POST `/api/v1/cars` Create a new car.
+
 GET `/api/v1/cars` Get all cars.
+
 GET `/api/v1/cars/<id>` Get a specific car by its ID.
+
 PATCH `/api/v1/cars/<id>/price` Edit a specific car price.
+
 DELETE `/api/v1/cars/<id>` Delete a particular car.
+
 POST `/api/v1/orders` Creating a political order.
+
 GET `/api/v1/orders` Retreiving all orders.
+
 GET `/api/v1/orders/<id>` Getting a order for a specific id.
+
 POST `/api/v1/auth/signup` Creating a new user
+
 POST `/api/v1/auth/login` Loging a new User
 
 # Heroku
