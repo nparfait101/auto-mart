@@ -1,128 +1,90 @@
-const {Pool}= require("pg");
-const dotenv= require("dotenv");
+import pool from "./db";
 
-dotenv.config();
+const tablesCreate = () => {
+  const users = `CREATE TABLE IF NOT EXISTS
+     users(
+       id SERIAL PRIMARY KEY,
+       email VARCHAR(50) UNIQUE NOT NULL,
+       "firstName" VARCHAR(24) NOT NULL,
+       "lastName" VARCHAR(10) NOT NULL,
+       password VARCHAR(80) NOT NULL,
+       address VARCHAR(50) NOT NULL,
+       "isAdmin" BOOLEAN NOT NULL DEFAULT false
+     )`;
+  const cars = `CREATE TABLE IF NOT EXISTS
+    cars(
+     id SERIAL PRIMARY KEY,
+     owner INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     "createdOn" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     state VARCHAR(50) NOT NULL,
+     status VARCHAR(50) NOT NULL,
+     manufacturer VARCHAR(50) NOT NULL,
+     model VARCHAR(50) NOT NULL,
+     body_type VARCHAR(50) NOT NULL
+    
+    )`;
+  const orders = `CREATE TABLE IF NOT EXISTS
+   orders(
+     id SERIAL PRIMARY KEY,
+     buyer INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     car_id INT NOT NULL REFERENCES cars(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     amount FLOAT NOT NULL,
+     status VARCHAR(50) NOT NULL
+   )`;
+  const flags = `CREATE TABLE IF NOT EXISTS
+   flags(
+     id SERIAL PRIMARY KEY,
+     car_id INT NOT NULL REFERENCES cars(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     "createdOn" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     reason VARCHAR(50) NOT NULL,
+     description VARCHAR(70) NOT NULL
+   )`;
+  const newUserTable = `INSERT INTO
+  users(
+    email,
+    "firstName",
+    "lastName",
+    password,
+    address,
+    "isAdmin"
+    ) VALUES (
+    'parfait123@gmail.com',
+    'ntagungira',
+    'parfait',
+    '$2b$08$de4oHNvGXgIQ49vCSDwhGelKeEWjGVk1oXy6P6o1ZmXlegsDXjI6.',
+    'KIMIRONKO',
+    true
+    )`;
+  const queries = `${users};${cars};${orders};${flags};${newUserTable}`;
+  pool.query(queries);
+  pool
+    .query(queries)
+    .then(res => {
+      console.log(res);
+      pool.end();
+    })
+    .catch(err => {
+      console.log(err);
+      pool.end();
+    });
 
-const pool = new Pool({
-connectionString: process.env.DATABASE_URL
-});
-
-pool.on('connect', () => {
-console.log('connected to the db');
-});
-
-//Create users table
-const create_users_table=()=>{
-   const users_table= `CREATE TABLE IF NOT EXISTS
-users(
-   id SERIAL,
-   email varchar(255) NOT NULL,
-   first_name varchar(255) NOT NULL,
-   last_name varchar(255) NOT NULL,
-   password varchar(255) NOT NULL,
-   address varchar(255) NOT NULL,
-   PRIMARY KEY (id)
-)`;
-pool.query(users_table)
-.then((res)=>{
-   console.log(res);
-   pool.end();
-})
-.catch((err)=>{
-   console.log(err);
-   pool.end();
-});
+  pool.on("remove", () => {
+    console.log("client removed");
+    process.exit(0);
+  });
 };
 
-//Create sales table
-const create_sales_table=()=>{
-   const sales_table= `CREATE TABLE IF NOT EXISTS
-sales(
-   id SERIAL,
-   owner_id int NOT NULL,
-   buyer_id int NOT NULL,
-   created_on DATE NOT NULL,
-   state varchar(255) NOT NULL,
-   status varchar(255) NOT NULL,
-   price int NOT NULL,
-   manufacturer varchar(255) NOT NULL,
-   model varchar(255) NOT NULL,
-   body_type varchar(255) NOT NULL,
-   flagged BOOLEAN,
-   PRIMARY KEY (id),
-   FOREIGN KEY (owner_id) REFERENCES users(id),
-   FOREIGN KEY (buyer_id) REFERENCES users(id)
-)`;
-pool.query(sales_table)
-.then((res)=>{
-   console.log(res);
-   pool.end();
-})
-.catch((err)=>{
-   console.log(err);
-   pool.end();
-});
+const tablesDelete = () => {
+  const users = "DROP TABLE IF EXISTS users CASCADE";
+  const loans = "DROP TABLE IF EXISTS loans CASCADE";
+  const repayments = "DROP TABLE IF EXISTS repayments";
+  const deleteQueries = `${users};${loans}; ${repayments}`;
+  pool.query(deleteQueries);
 };
 
-//Create orders table
-const create_orders_table=()=>{
-   const orders_table= `CREATE TABLE IF NOT EXISTS
-orders(
-   id SERIAL,
-   buyer_id int NOT NULL,
-   owner_id int NOT NULL,
-   car_id int NOT NULL,
-   created_on DATE NOT NULL,
-   amount int NOT NULL,
-   status varchar(255) NOT NULL,
-   PRIMARY KEY (id),
-   FOREIGN KEY (owner_id) REFERENCES users(id),
-   FOREIGN KEY (buyer_id) REFERENCES users(id),
-   FOREIGN KEY (car_id) REFERENCES sales(id)
-)`;
-pool.query(orders_table)
-.then((res)=>{
-   console.log(res);
-   pool.end();
-})
-.catch((err)=>{
-   console.log(err);
-   pool.end();
-});
+module.exports = {
+  tablesCreate,
+  tablesDelete
 };
 
-//Create reports table
-const create_reports_table=()=>{
-   const reports_table= `CREATE TABLE IF NOT EXISTS
-reports(
-   id SERIAL,
-   car_id int NOT NULL,
-   buyer_id int NOT NULL,
-   owner_id int NOT NULL,
-   created_on DATE NOT NULL,
-   reason varchar(255) NOT NULL,
-   description varchar(255) NOT NULL,
-   PRIMARY KEY (id),
-   FOREIGN KEY (owner_id) REFERENCES users(id),
-   FOREIGN KEY (buyer_id) REFERENCES users(id),
-   FOREIGN KEY (car_id) REFERENCES sales(id)
-)`;
-pool.query(reports_table)
-.then((res)=>{
-   console.log(res);
-   pool.end();
-})
-.catch((err)=>{
-   console.log(err);
-   pool.end();
-});
-};
-
-export const createAlltables=()=>{
-   create_users_table();
-   create_sales_table();
-   create_orders_table();
-   create_reports_table()
-};
-
-require('make-runnable');
+require("make-runnable");

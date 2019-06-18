@@ -16,6 +16,18 @@ app.use(
 
 app.use("/api/v1/cars", car);
 app.use("/api/v1/orders", orderRoutes);
-app.use("/api/v1/users", users);
+app.use("/api/v1", users);
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: 200,
+    message: "Welcome to Auto-mart apps!"
+  });
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =>
+  console.log(`Auto-mart apps is running on port ${port} ...`)
+);
 
 export default app;
