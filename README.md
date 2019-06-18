@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/nparfait101/auto-mart.svg?branch=develop)](https://travis-ci.org/nparfait101/auto-mart)
-
-[![Coverage Status](https://coveralls.io/repos/github/nparfait101/auto-mart/badge.svg)](https://coveralls.io/github/nparfait101/auto-mart)
+[![Build Status](https://travis-ci.org/nparfait101/auto-mart.svg?branch=develop)](https://travis-ci.org/nparfait101/auto-mart) [![Coverage Status](https://coveralls.io/repos/github/nparfait101/auto-mart/badge.svg)](https://coveralls.io/github/nparfait101/auto-mart)
 
 # auto-mart
 
