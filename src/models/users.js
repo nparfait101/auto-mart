@@ -5,12 +5,15 @@ import pool from "./db";
 class User {
   async checkEmail(email) {
     this.user = [];
-    this.res = await pool.query("SELECT * FROM users WHERE email=$1", [email]);
+    this.res = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email
+    ]);
     if (this.res.rowCount > 0) {
       this.user.push(this.res.rows[0]);
     }
     return this.user;
   }
+
   async checkEmail2(email) {
     this.res = await pool.query("SELECT * FROM users WHERE email = $1", [
       email
@@ -27,7 +30,7 @@ class User {
       data.email.trim(),
       data.firstName.trim(),
       data.lastName.trim(),
-      data.password.trim(),
+      this.password.trim(),
       data.address.trim(),
       data.isAdmin.trim()
     ];

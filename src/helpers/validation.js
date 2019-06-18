@@ -26,3 +26,17 @@ export const validateUser = data => {
   const { error } = Joi.validate(data, schema);
   return error;
 };
+
+export const validateLogin = data => {
+  const schema = {
+    email: Joi.string()
+      .email()
+      .required()
+      .trim(),
+    password: Joi.string()
+      .required()
+      .trim()
+  };
+  const { error } = Joi.validate(data, schema);
+  return error;
+};

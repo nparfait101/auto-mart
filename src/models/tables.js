@@ -51,7 +51,7 @@ const tablesCreate = () => {
     'parfait123@gmail.com',
     'ntagungira',
     'parfait',
-    '$2b$08$de4oHNvGXgIQ49vCSDwhGelKeEWjGVk1oXy6P6o1ZmXlegsDXjI6.',
+    '12345',
     'KIMIRONKO',
     true
     )`;
@@ -76,9 +76,9 @@ const tablesCreate = () => {
 
 const tablesDelete = () => {
   const users = "DROP TABLE IF EXISTS users CASCADE";
-  const loans = "DROP TABLE IF EXISTS loans CASCADE";
-  const repayments = "DROP TABLE IF EXISTS repayments";
-  const deleteQueries = `${users};${loans}; ${repayments}`;
+  const cars = "DROP TABLE IF EXISTS loans CASCADE";
+  const orders = "DROP TABLE IF EXISTS orders";
+  const deleteQueries = `${users};${cars}; ${orders}`;
   pool.query(deleteQueries);
 };
 
