@@ -239,6 +239,7 @@ h5 {
 }
 .flex-outer li select {
   border: none;
+  padding: 15px;
 }
 
 .flex-outer li p {
