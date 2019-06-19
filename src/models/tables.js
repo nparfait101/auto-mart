@@ -16,12 +16,11 @@ const tablesCreate = () => {
      id SERIAL PRIMARY KEY,
      owner INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
      "createdOn" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-     state VARCHAR(50) NOT NULL,
-     status VARCHAR(50) NOT NULL,
      manufacturer VARCHAR(50) NOT NULL,
      model VARCHAR(50) NOT NULL,
-     body_type VARCHAR(50) NOT NULL
-    
+     price FLOAT NOT NULL,
+     state VARCHAR(50) NOT NULL,
+     status VARCHAR(50) NOT NULL  
     )`;
   const orders = `CREATE TABLE IF NOT EXISTS
    orders(

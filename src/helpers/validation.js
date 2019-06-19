@@ -1,4 +1,5 @@
 import Joi from "joi";
+import { isBoolean } from "util";
 
 export const validateUser = data => {
   const schema = {
@@ -36,6 +37,37 @@ export const validateLogin = data => {
     password: Joi.string()
       .required()
       .trim()
+  };
+  const { error } = Joi.validate(data, schema);
+  return error;
+};
+
+export const validateCar = data => {
+  const schema = {
+    email: Joi.string()
+      .email()
+      .required(),
+    manufacturer: Joi.string()
+      .min(1)
+      .required()
+      .regex(/^[a-zA-Z] |[a-zA-Z] ?[a-zA-Z]+$/),
+    model: Joi.string()
+      .min(2)
+      .required()
+      .regex(/^[a-zA-Z] |[a-zA-Z] ?[a-zA-Z]+$/),
+    price: Joi.string()
+      .min(2)
+      .required()
+      .trim(),
+    state: Joi.string()
+      .min(2)
+      .required()
+      .trim(),
+    status: Joi.string()
+      .min(3)
+      .required()
+      .trim(),
+    isAdmin: Joi.string().required()
   };
   const { error } = Joi.validate(data, schema);
   return error;
