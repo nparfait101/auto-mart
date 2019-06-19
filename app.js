@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 
-import car from "./src/Routes/car";
+import carRoute from "./src/Routes/carRoute";
 import orderRoutes from "./src/Routes/orderRoutes";
 import users from "./src/Routes/users";
 
@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-app.use("/api/v1/cars", car);
+app.use("/api/v1/cars", carRoute);
 app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1", users);
 
