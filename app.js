@@ -1,33 +1,47 @@
+import path from "path";
 import express from "express";
-import bodyParser from "body-parser";
-
-import carRoute from "./src/Routes/carRoute";
-import orderRoutes from "./src/Routes/orderRoutes";
-import users from "./src/Routes/users";
+import morgan from "morgan";
+import cors from "cors";
+import appVariables from "./src/config/app.config";
+import stringFormater from "./src/middleware/stringFormater";
+import userRouter from "./src/routes/user";
+import carRouter from "./src/routes/car";
+import orderRouter from "./src/routes/order";
+import flagRouter from "./src/routes/flag";
 
 const app = express();
 
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: false
-  })
-);
+app.use(cors());
 
-app.use("/api/v1/cars", carRoute);
-app.use("/api/v1/orders", orderRoutes);
-app.use("/api/v1", users);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(stringFormater);
+
+app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
-  res.status(200).json({
-    status: 200,
-    message: "Welcome to Auto-mart apps!"
+  res.status(301).redirect("/docs");
+});
+
+app.use("/api/v2/", userRouter, carRouter, orderRouter, flagRouter);
+
+app.all("/*", (req, res) => {
+  res.status(404).json({
+    status: "error",
+    message: "this api endpoint does not exist"
   });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-  console.log(`Auto-mart apps is running on port ${port} ...`)
-);
+/* eslint-disable-next-line */
+app.use((err, req, res, next) => {
+  res.status(500).json({
+    status: "error",
+    message: "oops! something went wrong"
+  });
+});
+
+const { port } = appVariables || 3000;
+/* eslint-disable-next-line */
+app.listen(port, () => console.log(`App is running on port: ${port}`));
 
 export default app;
