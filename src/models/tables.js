@@ -5,17 +5,16 @@ const tablesCreate = () => {
      users(
        id SERIAL PRIMARY KEY,
        email VARCHAR(50) UNIQUE NOT NULL,
-       "firstName" VARCHAR(24) NOT NULL,
-       "lastName" VARCHAR(10) NOT NULL,
+       firstname VARCHAR(24) NOT NULL,
+       lastname VARCHAR(10) NOT NULL,
        password VARCHAR(80) NOT NULL,
        address VARCHAR(50) NOT NULL,
-       "isAdmin" BOOLEAN NOT NULL DEFAULT false
+       isadmin BOOLEAN NOT NULL DEFAULT false
      )`;
   const cars = `CREATE TABLE IF NOT EXISTS
     cars(
      id SERIAL PRIMARY KEY,
-     owner INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-     "createdOn" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     email VARCHAR(50) NOT NULL
      manufacturer VARCHAR(50) NOT NULL,
      model VARCHAR(50) NOT NULL,
      price FLOAT NOT NULL,
@@ -41,11 +40,11 @@ const tablesCreate = () => {
   const newUserTable = `INSERT INTO
   users(
     email,
-    "firstName",
-    "lastName",
+    firstname,
+    lastname,
     password,
     address,
-    "isAdmin"
+    isadmin
     ) VALUES (
     'parfait123@gmail.com',
     'ntagungira',
@@ -54,8 +53,26 @@ const tablesCreate = () => {
     'KIMIRONKO',
     true
     )`;
-  const queries = `${users};${cars};${orders};${flags};${newUserTable}`;
+
+  const newCarTable = `INSERT INTO
+  cars(
+    email,
+    manufacturer,
+    model,
+    price,
+    state,
+    status
+    ) VALUES (
+    'parfait101@gmail.com',
+    'honda',
+    'civic',
+    '12300',
+    'new',
+    'Available'
+    )`;
+  const queries = `${users};${cars};${orders};${flags};${newUserTable};${newCarTable}`;
   pool.query(queries);
+  console.log("tables created successfully");
   pool
     .query(queries)
     .then(res => {
@@ -75,15 +92,13 @@ const tablesCreate = () => {
 
 const tablesDelete = () => {
   const users = "DROP TABLE IF EXISTS users CASCADE";
-  const cars = "DROP TABLE IF EXISTS loans CASCADE";
+  const cars = "DROP TABLE IF EXISTS cars CASCADE";
   const orders = "DROP TABLE IF EXISTS orders";
   const deleteQueries = `${users};${cars}; ${orders}`;
   pool.query(deleteQueries);
+  console.log("tables deleted successfully");
 };
 
-module.exports = {
-  tablesCreate,
-  tablesDelete
-};
-
+tablesDelete();
+tablesCreate();
 require("make-runnable");
