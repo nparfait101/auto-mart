@@ -57,7 +57,6 @@ class UserController {
       req.body.password,
       user[0].password
     );
-    console.log(validPassword);
     if (validPassword) {
       const newUser = _.omit(user[0], "password");
       const token = jwt.sign({ newUser }, `${process.env.PRIVATE_KEY}`, {

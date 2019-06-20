@@ -28,21 +28,21 @@ class User {
     this.password = await bcrypt.hash(data.password, this.salt);
     this.newUser = [
       data.email.trim(),
-      data.firstName.trim(),
-      data.lastName.trim(),
+      data.firstname.trim(),
+      data.lastname.trim(),
       this.password.trim(),
       data.address.trim(),
-      data.isAdmin.trim()
+      data.isadmin.trim()
     ];
     this.res = await pool.query(
       `INSERT INTO
     users(
       email,
-      "firstName",
-      "lastName",
+      firstname,
+      lastname,
       password,
       address,
-      "isAdmin"
+      isadmin
     )VALUES($1,$2,$3,$4,$5,$6) RETURNING *
     `,
       this.newUser

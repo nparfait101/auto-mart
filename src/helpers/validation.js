@@ -6,11 +6,11 @@ export const validateUser = data => {
     email: Joi.string()
       .email()
       .required(),
-    firstName: Joi.string()
+    firstname: Joi.string()
       .min(1)
       .required()
       .regex(/^[a-zA-Z] |[a-zA-Z] ?[a-zA-Z]+$/),
-    lastName: Joi.string()
+    lastname: Joi.string()
       .min(2)
       .required()
       .regex(/^[a-zA-Z] |[a-zA-Z] ?[a-zA-Z]+$/),
@@ -22,7 +22,7 @@ export const validateUser = data => {
       .min(3)
       .required()
       .regex(/^[a-zA-Z0-9]{6,30}$/),
-    isAdmin: Joi.string()
+    isadmin: Joi.string()
   };
   const { error } = Joi.validate(data, schema);
   return error;
@@ -66,8 +66,8 @@ export const validateCar = data => {
     status: Joi.string()
       .min(3)
       .required()
-      .trim(),
-    isAdmin: Joi.string().required()
+      .trim()
+    // isadmin: Joi.string().required()
   };
   const { error } = Joi.validate(data, schema);
   return error;
